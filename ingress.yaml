@@ -1,0 +1,542 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+  namespace: apps-dev
+spec:
+  controller: k8s.io/ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv-apps-dev
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "120"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "120"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "120"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: cc1fbde45ead-in-south-01.mayson.dev
+      http:
+        paths:
+          - path: /ap-northeast-2-backstractelb-88c84a-coll-a016c3adcb6349b4b36d9f2cdc61759c/
+            pathType: Prefix
+            backend:
+              service:
+                name: trusting-curran-d65bf1d1b9-srv
+                port:
+                  number: 80
+          - path: /us-west-2-backstractelb-99e410-coll-2ad2a194cbbc4a0ca68cd1e5ad1ec67c/
+            pathType: Prefix
+            backend:
+              service:
+                name: heuristic-neha-35cc1b173c-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-c6e03e-coll-ed56dee9cff54332ba1363482e6aca17/
+            pathType: Prefix
+            backend:
+              service:
+                name: daring-johnson-ac025de679-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-1d0510-coll-2c15f7c5a8fd4cc5b66228ea971b43db/
+            pathType: Prefix
+            backend:
+              service:
+                name: nostalgic-lederberg-cfa72dc9e0-srv
+                port:
+                  number: 80
+          - path: /us-west-2-backstractelb-5e824f-coll-af936733bb4b4d25a6a4aa5e7fda5c40/
+            pathType: Prefix
+            backend:
+              service:
+                name: cool-mcclintock-1cb83bdc8f-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-169cb2-coll-46f996dacb774ff3b6d9a0ba4e948acf/
+            pathType: Prefix
+            backend:
+              service:
+                name: gifted-neha-9dc32ca9da-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-1-backstractelb-13f60d-coll-3cc259ed214a4303b1df1a37bc48ce17/
+            pathType: Prefix
+            backend:
+              service:
+                name: pensive-tejas-13e3ca5657-srv
+                port:
+                  number: 80
+          - path: /eu-central-1-backstractelb-ee01e3-coll-eda6f2386a5c4f16840ddd33f73b6636/
+            pathType: Prefix
+            backend:
+              service:
+                name: innovative-parvati-e50685a0c6-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-7deab2-coll-c4a062f0e8e94956a7bab0b1941ee1a2/
+            pathType: Prefix
+            backend:
+              service:
+                name: blissful-sita-0b4cb59682-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-7bb545-coll-1b4e688215114005a93a924076283028/
+            pathType: Prefix
+            backend:
+              service:
+                name: keen-lalande-530f4dd6cf-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-2f5db5-coll-5db1f4dec94546f7ba1b001d13bec57f/
+            pathType: Prefix
+            backend:
+              service:
+                name: savvy-vaishali-0f0dac00f1-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-1-backstractelb-af41f0-coll-8024b8f8013745778aa8c310a183dd9a/
+            pathType: Prefix
+            backend:
+              service:
+                name: zealous-montalcini-b212c3b5cf-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-1-backstractelb-820e0e-coll-ef9f57375cdf4a4493f43fdc487a97f7/
+            pathType: Prefix
+            backend:
+              service:
+                name: graceful-bhaskar-21c8eb4350-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-37c9d3-coll-4e9fad9fe9194881b55c521a48b9a3aa/
+            pathType: Prefix
+            backend:
+              service:
+                name: eager-minsky-efc66d560f-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-4a28e1-coll-0a03232197e94437aff3f27a36ffeaf9/
+            pathType: Prefix
+            backend:
+              service:
+                name: blissful-newton-478bd72d92-srv
+                port:
+                  number: 80
+          - path: /eu-central-1-backstractelb-f85573-coll-e5d2e858813e41f0a8e875c66a046efa/
+            pathType: Prefix
+            backend:
+              service:
+                name: zen-einstein-605d5eb68d-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-1-backstractelb-f2954f-coll-572e9a88220a4e66b005770122023e0f/
+            pathType: Prefix
+            backend:
+              service:
+                name: sharp-bassi-ea82eeb55e-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-379c58-coll-8fbc235cac0949808474bde6e7b976b6/
+            pathType: Prefix
+            backend:
+              service:
+                name: agitated-mirzakhani-0d38942acb-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-2-backstractelb-4bece2-coll-3f2368fa3085499ebb9d8177ebaebc56/
+            pathType: Prefix
+            backend:
+              service:
+                name: laughing-ajay-181f177927-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-cb624e-coll-c4930355b0e648d49daea683480ff955/
+            pathType: Prefix
+            backend:
+              service:
+                name: confident-sagar-27db216944-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-a52ea0-coll-1ab7a89c52624a2abfd0741865924e95/
+            pathType: Prefix
+            backend:
+              service:
+                name: strategic-kavya-db5cca87ac-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-d62641-coll-f4e702aece4544d9976ca77a88ca97c0/
+            pathType: Prefix
+            backend:
+              service:
+                name: affectionate-stallman-32c302313d-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-1-backstractelb-b99aac-coll-d11b3259ded549759d2f8694f5946702/
+            pathType: Prefix
+            backend:
+              service:
+                name: awesome-almeida-bac8669a11-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-144292-coll-1d22b577e353400db1269618d1cd683f/
+            pathType: Prefix
+            backend:
+              service:
+                name: exciting-davinci-e456709d41-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-8274c3-coll-8219f64785d840be8e64ac00503d28c6/
+            pathType: Prefix
+            backend:
+              service:
+                name: pedantic-ride-bdaa60fbdb-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-b6dee2-coll-10a5c2eeeb4c46a5bf018318241e4745/
+            pathType: Prefix
+            backend:
+              service:
+                name: brilliant-ramanujan-2115991862-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-2ad375-coll-8ab2280e942a4daba86e7b126a5a8d8c/
+            pathType: Prefix
+            backend:
+              service:
+                name: distracted-radhika-15b41b16ff-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-1-backstractelb-79ea78-coll-d0919f41d34f4b9e861b91689b8bfffb/
+            pathType: Prefix
+            backend:
+              service:
+                name: capable-maxwell-ce58312697-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-ec34e5-coll-d8eb214d315647efaec9a82a75c42db2/
+            pathType: Prefix
+            backend:
+              service:
+                name: expert-austin-f850186d11-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-0b6dd8-coll-dc1be7a01c6940bea3653f24c1c2b5c5/
+            pathType: Prefix
+            backend:
+              service:
+                name: sad-matsumoto-390b4b6d0e-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-34f202-coll-d32d6c46c822483c8d00c684c6207044/
+            pathType: Prefix
+            backend:
+              service:
+                name: condescending-torvalds-4d9e4f23a2-srv
+                port:
+                  number: 80
+          - path: /eu-central-1-backstractelb-7b5d4c-coll-652b5d7adcf84fdc9f2e366a8bf0ca62/
+            pathType: Prefix
+            backend:
+              service:
+                name: festive-herschel-896db017f0-srv
+                port:
+                  number: 80
+          - path: /us-west-2-backstractelb-da15e2-coll-f87f23c53b2740da88a8e7b33a01feb9/
+            pathType: Prefix
+            backend:
+              service:
+                name: gifted-tejas-9930290d53-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-b2be25-coll-f6e528bfd93c49e2b8745527506c8b57/
+            pathType: Prefix
+            backend:
+              service:
+                name: bold-buck-3665a146fd-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-b23320-coll-9ae82d38353e49da8a5562b791e0c08f/
+            pathType: Prefix
+            backend:
+              service:
+                name: affectionate-pooja-5df20efda6-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-1-backstractelb-cf8b3e-coll-0f188cd5bac147178f0a1b5a4933c40d/
+            pathType: Prefix
+            backend:
+              service:
+                name: brave-nobel-b54d1d25fc-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-af9a58-coll-60b90e939aa24019a579d137e7b8101d/
+            pathType: Prefix
+            backend:
+              service:
+                name: silly-lichterman-3b466e8aea-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-afac47-coll-59e5d449924849f085d1b073bdf1c806/
+            pathType: Prefix
+            backend:
+              service:
+                name: affectionate-cori-68c4b4bd0a-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-1c90e7-coll-82b20fb3e7bd45609d36f3014d9b3aee/
+            pathType: Prefix
+            backend:
+              service:
+                name: objective-borg-890f6a0d9f-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-819cd1-coll-6f25e85f165d4548807f69ae41c42a4b/
+            pathType: Prefix
+            backend:
+              service:
+                name: jubilant-govind-5a758cd7a8-srv
+                port:
+                  number: 80
+          - path: /eu-central-1-backstractelb-914af1-coll-c7f855b7a2874fbabeabcb3856cdb74f/
+            pathType: Prefix
+            backend:
+              service:
+                name: vigilant-clarke-e59b2c7968-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-f761b1-coll-75729d770bdc43988000529fa4c2ae80/
+            pathType: Prefix
+            backend:
+              service:
+                name: jolly-lamport-8f876d1c73-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-1-backstractelb-da2bf1-coll-47b104db06334ee4bd80d172cc4de38b/
+            pathType: Prefix
+            backend:
+              service:
+                name: kind-brahmagupta-87d57d94e7-srv
+                port:
+                  number: 80
+          - path: /us-west-2-backstractelb-6f64e5-coll-38d1aec0612b41f09b3152a51cc6bdc4/
+            pathType: Prefix
+            backend:
+              service:
+                name: jovial-panini-e42b8f56f1-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-322626-coll-bc9b3147d3da41ff8aa8e74d6d7b8a3b/
+            pathType: Prefix
+            backend:
+              service:
+                name: youthful-tara-a2daf207e0-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-2-backstractelb-d42314-coll-41145ad64dd14be4b13b26c891403a0d/
+            pathType: Prefix
+            backend:
+              service:
+                name: stoic-sita-d3e8735ae3-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-be1ccf-coll-d7f19fda33d84c36bd884fba6c752cbc/
+            pathType: Prefix
+            backend:
+              service:
+                name: calm-arjun-7c2dff138f-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-a95664-coll-b0195c3ed6924951972f1ca9868a77dd/
+            pathType: Prefix
+            backend:
+              service:
+                name: heuristic-savita-d35c88101c-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-15c59e-coll-3804e9d3c4ff4fc09e027e88aa2c312f/
+            pathType: Prefix
+            backend:
+              service:
+                name: peaceful-liskov-03d28482d5-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-629e5d-coll-1a24ba9e766f42b79b86097859707f08/
+            pathType: Prefix
+            backend:
+              service:
+                name: proud-tejas-72ff0dc95e-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-07fb70-coll-203956e29cf747eb8ab85f3e17211eae/
+            pathType: Prefix
+            backend:
+              service:
+                name: tender-sanya-ed02997c36-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-cb51ac-coll-b7a11b39cdab46c7ae70ef5e7b8fd051/
+            pathType: Prefix
+            backend:
+              service:
+                name: cool-ravi-a6e6fbd7dc-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-1-backstractelb-5dac44-coll-42651c5ecc43417d86a5ea961f0db37a/
+            pathType: Prefix
+            backend:
+              service:
+                name: tenacious-bell-258d7f4e53-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-bbaac5-coll-2823d4419c804756a244308e13e4dba5/
+            pathType: Prefix
+            backend:
+              service:
+                name: elegant-durga-a3ea6a3266-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-9e3a84-coll-af84dd907c5c43718a8296d4a6e9ea43/
+            pathType: Prefix
+            backend:
+              service:
+                name: nifty-radha-0b297038f6-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-517d4c-coll-a97dd487ba704a478a0c20c456d7ea55/
+            pathType: Prefix
+            backend:
+              service:
+                name: gallant-dubinsky-54a5cf3404-srv
+                port:
+                  number: 80
+          - path: /us-east-1-backstractelb-afecbc-coll-cf62af43556248d1be0fa3d05cd48d17/
+            pathType: Prefix
+            backend:
+              service:
+                name: happy-mcclintock-8cc0142370-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-b66f99-coll-65dc4fa22858400398f78cc86341de9c/
+            pathType: Prefix
+            backend:
+              service:
+                name: agile-lederberg-7fdd3882b7-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-1-backstractelb-095da3-coll-94903c9036e445ce87b55ef4dc395d28/
+            pathType: Prefix
+            backend:
+              service:
+                name: distracted-swirles-40c3e1ce4d-srv
+                port:
+                  number: 80
+          - path: /ap-southeast-2-backstractelb-cd796d-coll-ce23e3e96fec470a82a0aba4aa64961d/
+            pathType: Prefix
+            backend:
+              service:
+                name: nimble-hopper-24f197fd16-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-0d1afe-coll-5ac0a2a80a13430aa5976cd25ba13f2e/
+            pathType: Prefix
+            backend:
+              service:
+                name: lively-chandrasekhar-e6e729c62a-srv
+                port:
+                  number: 80
+          - path: /us-east-1-backstractelb-a9d3e5-coll-393f7b7c69594143944fbbd32f24d75d/
+            pathType: Prefix
+            backend:
+              service:
+                name: cranky-lumiere-641a477074-srv
+                port:
+                  number: 80
+          - path: /us-west-2-backstractelb-13557c-coll-7fa89849a2e14e07bdc7f279e0ab4898/
+            pathType: Prefix
+            backend:
+              service:
+                name: jubilant-radhika-834f030fa7-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-24e6d2-coll-bad87900e7c54faaa13b14a65d76a44d/
+            pathType: Prefix
+            backend:
+              service:
+                name: intuitive-mendel-b842a58d7b-srv
+                port:
+                  number: 80
+          - path: /us-west-1-backstractelb-ba465f-coll-db7381866ad74594bcac0fb660675337/
+            pathType: Prefix
+            backend:
+              service:
+                name: visionary-priya-91ee0ba435-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-04a46d-coll-4038d7cd96964014aac6ab1e6d00ef09/
+            pathType: Prefix
+            backend:
+              service:
+                name: fearless-fermat-c8d3aa5387-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-faf61d-coll-052463b4ec7047ba96987f1945e1f03d/
+            pathType: Prefix
+            backend:
+              service:
+                name: bright-prakash-19ae6d5581-srv
+                port:
+                  number: 80
+          - path: /ap-northeast-2-backstractelb-92338b-coll-2423abe69dec486a932e3b63361420e1/
+            pathType: Prefix
+            backend:
+              service:
+                name: focused-allen-449ad731f7-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-c6870e-coll-a6c6891e553b437fa11667ac24e0f528/
+            pathType: Prefix
+            backend:
+              service:
+                name: hungry-sammet-de8e98c466-srv
+                port:
+                  number: 80
+          - path: /eu-west-1-backstractelb-75e233-coll-9fd847dab73f45d2adde42236504e398/
+            pathType: Prefix
+            backend:
+              service:
+                name: amazing-goldstine-f362aa57ef-srv
+                port:
+                  number: 80
+          - path: /us-east-1-backstractelb-522f24-coll-74a77bd65fc843a8b54191e8a6113937/
+            pathType: Prefix
+            backend:
+              service:
+                name: fearless-booth-29e0fdd39a-srv
+                port:
+                  number: 80
+          - path: /us-east-2-backstractelb-e82190-coll-b350e5bd1bb3486c9696d0e243e4d559/
+            pathType: Prefix
+            backend:
+              service:
+                name: musing-hypatia-430d16eba1-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-a7826d-coll-6826fc479e0c4fd19a67715ce21910d9/
+            pathType: Prefix
+            backend:
+              service:
+                name: harmonious-aditya-3c9fe26339-srv
+                port:
+                  number: 80
+          - path: /eu-west-2-backstractelb-160f97-coll-94fce4595f0e4cc8be0dab0bc37c8286/
+            pathType: Prefix
+            backend:
+              service:
+                name: great-agnesi-4bdfe82eaa-srv
+                port:
+                  number: 80
+          
